@@ -4,7 +4,7 @@ import "./styles.css";
 
 const CONFIG = {
   herName: "Mimosa",
-  yourName: "Karthik",
+  yourName: "Karthick",
   birthDate: { year: 2005, month: 6, day: 3 },
   letter: `My Dear Friend,
 
