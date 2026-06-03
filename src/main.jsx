@@ -32,7 +32,6 @@ const scenes = [
   { id: "welcome", label: "Welcome", tone: "soft" },
   { id: "countdown", label: "Countdown", tone: "wine" },
   { id: "letter", label: "Letter", tone: "cream" },
-  { id: "reasons", label: "Reasons", tone: "blush" },
   { id: "gallery", label: "Gallery", tone: "cream" },
   { id: "cake", label: "Cake", tone: "blush" },
   { id: "closing", label: "Closing", tone: "blush" },
@@ -73,7 +72,6 @@ function App() {
         {scene.id === "welcome" && <Welcome />}
         {scene.id === "countdown" && <Countdown />}
         {scene.id === "letter" && <Letter />}
-        {scene.id === "reasons" && <Reasons />}
         {scene.id === "gallery" && <Gallery />}
         {scene.id === "cake" && <Cake />}
         {scene.id === "closing" && <Closing onRestart={() => go(0)} />}
