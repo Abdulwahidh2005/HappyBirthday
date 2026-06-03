@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For You ❤</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Caveat:wght@400;500;600;700&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- music toggle -->
+<button id="music-toggle" class="music-toggle" aria-label="Toggle music" title="Play / pause music">
+  <div class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <svg class="muted-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9 18V6l10-2v12" />
+    <circle cx="6" cy="18" r="3" />
+    <circle cx="16" cy="16" r="3" />
+    <line x1="3" y1="3" x2="21" y2="21" stroke-width="1.6" />
+  </svg>
+</button>
+<audio id="bg-audio" loop preload="none">
+  <!-- Drop your song in as audio/song.mp3 (create the audio/ folder) -->
+  <source src="audio/song.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- ===================== SCENE 1 — WELCOME ===================== -->
+<section id="welcome" class="scene" data-screen-label="Welcome">
+  <div class="petals" id="petals" aria-hidden="true"></div>
+  <div class="scene-inner">
+    <p class="kicker reveal">A little something for</p>
+    <h1 class="display welcome-name reveal" style="--d:120ms" data-her-name>My Love</h1>
+    <p class="lede reveal" style="--d:280ms">Made with my whole heart — take your time, and scroll slowly.</p>
+  </div>
+  <div class="scroll-cue" aria-hidden="true">
+    <span>scroll</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+</section>
+
+<!-- ===================== SCENE 2 — COUNTDOWN ===================== -->
+<section id="countdown" class="scene scene--wine" data-screen-label="Countdown">
+  <p class="kicker reveal">Every second counts</p>
+  <h2 class="display reveal" style="--d:100ms; font-size: clamp(34px, 5vw, 72px);">Time I've been lucky enough<br/>to call you mine</h2>
+  <div class="count-grid reveal" style="--d:240ms">
+    <div class="count-cell"><span class="count-num" id="c-days">0</span><span class="count-label">Days</span></div>
+    <div class="count-cell"><span class="count-num" id="c-hours">00</span><span class="count-label">Hours</span></div>
+    <div class="count-cell"><span class="count-num" id="c-mins">00</span><span class="count-label">Minutes</span></div>
+    <div class="count-cell"><span class="count-num" id="c-secs">00</span><span class="count-label">Seconds</span></div>
+  </div>
+  <p class="count-since reveal" id="count-since-date" style="--d:360ms">since the day we met</p>
+</section>
+
+<!-- ===================== SCENE 3 — LETTER ===================== -->
+<section id="letter-scene" class="scene scene--cream" data-screen-label="Letter">
+  <p class="kicker reveal">In my own words</p>
+  <h2 class="display reveal" style="--d:100ms; font-size: clamp(32px, 4.5vw, 60px); margin-bottom: clamp(28px,4vh,44px);">A letter for you</h2>
+  <div class="letter reveal" style="--d:220ms">
+    <p class="letter-body" data-letter-body></p>
+    <p class="letter-sign" data-letter-sign>Always yours,</p>
+    <span class="letter-sign" data-your-name style="font-size:clamp(28px,3.6vw,46px); display:block; margin-top:-6px;">Me</span>
+    <div class="letter-seal" aria-hidden="true">❤</div>
+  </div>
+</section>
+
+<!-- ===================== SCENE 4 — REASONS ===================== -->
+<section id="reasons" class="scene scene--blush" data-screen-label="Reasons">
+  <p class="kicker reveal">A few of so many</p>
+  <h2 class="display reveal" style="--d:100ms; font-size: clamp(32px, 4.8vw, 64px);">Reasons I'm crazy about you</h2>
+  <div class="cards reveal" id="cards" style="--d:220ms"></div>
+</section>
+
+<!-- ===================== SCENE 5 — GALLERY ===================== -->
+<section id="gallery-scene" class="scene scene--cream" data-screen-label="Gallery">
+  <p class="kicker reveal">Moments I keep</p>
+  <h2 class="display reveal" style="--d:100ms; font-size: clamp(32px, 4.8vw, 64px);">Us</h2>
+  <p class="lede reveal" style="--d:180ms; font-style:normal; font-size:clamp(15px,1.6vw,18px); font-family:var(--font-body); letter-spacing:.02em;">Drag your favorite photos onto the frames below.</p>
+  <div class="gallery reveal" style="--d:260ms">
+    <div class="polaroid" style="--rot:-3deg"><image-slot id="ph1" shape="rect" placeholder="Drop a photo"></image-slot><div class="cap">the beginning</div></div>
+    <div class="polaroid" style="--rot:2deg"><image-slot id="ph2" shape="rect" placeholder="Drop a photo"></image-slot><div class="cap">that morning</div></div>
+    <div class="polaroid" style="--rot:-1.5deg"><image-slot id="ph3" shape="rect" placeholder="Drop a photo"></image-slot><div class="cap">just us</div></div>
+    <div class="polaroid" style="--rot:2.5deg"><image-slot id="ph4" shape="rect" placeholder="Drop a photo"></image-slot><div class="cap">golden hour</div></div>
+  </div>
+</section>
+
+<!-- ===================== SCENE 6 — CAKE ===================== -->
+<section id="cake-scene" class="scene" data-screen-label="Cake">
+  <p class="kicker reveal">One more thing</p>
+  <h2 class="display reveal" style="--d:100ms; font-size: clamp(34px, 5vw, 68px);">Make a wish</h2>
+  <div class="cake-wrap reveal" style="--d:200ms" aria-label="Birthday cake with candles">
+    <div class="cake">
+      <div class="candles" aria-hidden="true">
+        <span class="candle"><i></i></span>
+        <span class="candle"><i></i></span>
+        <span class="candle"><i></i></span>
+      </div>
+      <div class="cake-top"></div>
+      <div class="cake-layer cake-layer--one"></div>
+      <div class="cake-layer cake-layer--two"></div>
+      <div class="plate"></div>
+    </div>
+  </div>
+  <button id="blow-btn" class="blow-btn reveal" style="--d:320ms" type="button">Blow candles</button>
+</section>
+
+<!-- ===================== SCENE 7 — CLOSING ===================== -->
+<section id="closing" class="scene scene--wine" data-screen-label="Closing">
+  <p class="kicker reveal">No matter what</p>
+  <p class="closing-script reveal" style="--d:120ms">Forever, you.</p>
+  <p class="signature reveal" style="--d:300ms">Made with love<b data-your-name>Me</b></p>
+  <button class="replay reveal" style="--d:420ms" onclick="window.scrollTo({top:0, behavior:'smooth'})">Start over</button>
+</section>
+
+<script src="image-slot.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
